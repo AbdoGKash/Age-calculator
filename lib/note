@@ -1,0 +1,204 @@
+todaydata() {
+    return Padding(
+      padding: const EdgeInsets.all(15.0),
+      child: TextField(
+        readOnly: true,
+        onTap: () {},
+        controller: TextEditingController(text: "11-21-2023"),
+        decoration: const InputDecoration(
+            enabledBorder:
+                OutlineInputBorder(borderSide: BorderSide(color: Colors.blue)),
+            border:
+                OutlineInputBorder(borderSide: BorderSide(color: Colors.blue)),
+            suffixIcon: Icon(
+              Icons.date_range,
+              color: Colors.blue,
+            )),
+      ),
+    );
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  dataofbirth(BuildContext contex) {
+    return Padding(
+        padding: const EdgeInsets.all(15.0),
+        child: TextField(
+          readOnly: true,
+          onTap: () {
+            showDatePicker(
+              context: contex,
+              initialDate: DateTime.now(),
+              firstDate: DateTime(1900),
+              lastDate: DateTime.now(),
+            );
+          },
+          controller: TextEditingController(text: ""),
+          decoration: const InputDecoration(
+              enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.blue)),
+              border: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.blue)),
+              suffixIcon: Icon(
+                Icons.date_range,
+                color: Colors.blue,
+              )),
+        ));
+  }
+
+  headtodaydata() {
+    return const Text('Today Data',
+        style: TextStyle(fontSize: 20, color: Colors.grey));
+  }
+
+  todaydata(BuildContext contex) {
+    return Padding(
+        padding: const EdgeInsets.all(15.0),
+        child: TextField(
+          readOnly: true,
+          onTap: () {
+            showDatePicker(
+              context: contex,
+              initialDate: DateTime.now(),
+              firstDate: DateTime(1900),
+              lastDate: DateTime.now(),
+            );
+          },
+          controller: TextEditingController(text: ""),
+          decoration: const InputDecoration(
+              enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.blue)),
+              border: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.blue)),
+              suffixIcon: Icon(
+                Icons.date_range,
+                color: Colors.blue,
+              )),
+        ));
+  }
+
+  button() {
+    return Padding(
+      padding: const EdgeInsets.all(15.0),
+      child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+        SizedBox(
+          width: 130,
+          height: 50,
+          child: ElevatedButton(
+            onPressed: () {
+              ///////////////////
+            },
+            child: const Text(
+              "CLEAR",
+              style: TextStyle(fontSize: 15),
+            ),
+          ),
+        ),
+        SizedBox(
+          width: 130,
+          height: 50,
+          child: ElevatedButton(
+            onPressed: () {
+              ////////////
+            },
+            child: const Text(
+              "CALCULATE",
+              style: TextStyle(fontSize: 15),
+            ),
+          ),
+        ),
+      ]),
+    );
+  }
+
+  headageis() {
+    return const Text(
+      'Age is',
+      style: TextStyle(fontSize: 15, color: Colors.grey),
+    );
+  }
+
+  buttonageis() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        commenbutton("Years", agedata.years.toString()),
+        commenbutton("Month", agedata.months.toString()),
+        commenbutton("Day", agedata.days.toString()),
+      ],
+    );
+  }
+
+  commenbutton(String name, String action) {
+    return Column(children: [
+      Container(
+        color: Colors.blue,
+        width: 90,
+        height: 30,
+        child: Center(
+            child: Text(
+          name,
+          style: const TextStyle(color: Colors.white),
+        )),
+      ),
+      Container(
+        decoration: BoxDecoration(border: Border.all(color: Colors.blue)),
+        width: 90,
+        height: 30,
+        child: Center(
+            child: Text(
+          action, ////////////////////////////
+          style: const TextStyle(color: Colors.grey),
+        )),
+      )
+    ]);
+  }
+
+  headnaxtbrithdayin() {
+    return const Text(
+      'Next Birth Day in',
+      style: TextStyle(fontSize: 15, color: Colors.grey),
+    );
+  }
+
+  buttonnaxtbrithdayin() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        commenbutton("Years", nextbrithdata.years),
+        commenbutton("Month", nextbrithdata.months.toString()),
+        commenbutton("Day", nextbrithdata.days.toString()),
+      ],
+    );
+  }
+}
